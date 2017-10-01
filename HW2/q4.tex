@@ -1,3 +1,10 @@
-\begin{problem}{4}
+\begin{problem}{4} ~\\
+Set Cover problem can be reduced to the Book problem. Since Set Cover is a NPC problem, the Book problem is itself a NP problem. Thus, the Book problem is also a NPC problem.\\
+\\
+First we prove that Book problem is a NP problem. According to the definition of NP, NP is a set of problems that are poly-time checkable. Assume that the list of language a person wants to learn is of size n, for each book, we can use $O(n)$ time to check whether it contains some languages on the lists. We remove those matches from the list. Once we've done checking k books, if there are remaining languages in the list then the Book problem is a NO. Otherwise, it's a YES. Therefore, the Book problem is a NP problem.\\
+\\
+The list of languages a person wants to learn can be seen as the universe: U = \{ C++, Java, Python, Pascal, Javascript, Ruby... \}. Each book can be considered as a set: Book1 = \{ Javascript, Swift\}, Book2 = \{C++, Python, Scala\}, etc. Now we have a collection S of m sets whose union might/might not equal to the universe (this is a little bit different from Set Cover problem, but it doesn't affect the complexity of the described problem).\\ 
+
+Given (U, S) and an integer k (k is the number of books the suitcase fits), the question is whether there is a set covering of size k or less. From the above explanation, we can conclude that the problem described is in fact a Set Cover decision problem with a slight change on the input assumption. The change has no influence on the complexity of the problem solver.
 
 \end{problem}

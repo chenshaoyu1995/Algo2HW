@@ -1,3 +1,13 @@
-\begin{problem}{2}
-
+\begin{problem}{2} ~\\
+Reduction:\\
+\\
+Let Y = X and Z = \{z $|$ $z \in X$, 2z + b != 0\}, where b is another element of X.\\
+\\
+For example, X = \{3,5,8,-3,6,-7,-1\}, then Y = X, and Z = \{-3,-5,-8,-6,7,1\}.\\
+\\
+If 3SUM is a YES, the SIMILAR would certainly be a YES. The only circumstance in which 3SUM is a YES but SIMILAR is a NO is that 3SUM has a+b+c=0, but -a,-b,-c are not in Z. We will prove that this circumstance is impossible. First, we assume that 3SUM only has a triple of a,b,c such that a+b+c=0. However, SIMILAR is a NO because all -a,-b,-c are not in Z, which indicates that 2a+d=0, 2b+e=0, 2c+f=0 and d+e+f=0. This violates our assumption, so the circumstance is impossible.\\
+\\
+If SIMILAR is a YES, now we might worry that c = -a or c = -b, because 3SUM would be a NO in this case. However, we have avoided this situation by assigning Z = \{z $|$ $z \in X$, 2z + b != 0\}.\\
+\\
+In sum, 3SUM can be reduced to 3SUM' in $O(nlog{}n)$, which is spent on the sort of input array to find elements that conform to 2z+b=0.
 \end{problem}

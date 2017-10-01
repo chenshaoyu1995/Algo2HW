@@ -1,3 +1,21 @@
-\begin{problem}{1} 
+\begin{problem}{1} ~
+\begin{enumerate}
+\item $3SUM \rightarrow 3SUM'$\\
+3SUM is an instance of 3SUM' since it conforms to all properties of 3SUM'.Thus, solving 3SUM' whose input is distinct and non-zero is in fact solving 3SUM.\\
 
+\item $3SUM' \rightarrow 3SUM$\\
+There's a function f that goes $3SUM' \rightarrow 3SUM$. Function f can be implemented as follows:
+\begin{itemize}
+\item First, sort the input of 3SUM' A, which requires $O(n\log{}n)$.
+
+\item Second, scan the sorted input array A, identify repeating integers and put them into another array (called B). Meanwhile, also identify if there's zero in A, and the number of zeros. If there are more than two zeros, output YES. Remove all zeros from A. B should be in a sorted order afterwards. This step requires $O(n)$.
+
+\item If there's zero integer in the original A, then scan the resulting A (with no zero and no repeating integers) from the front to the end and the end to the front simultaneously. If $A[front] + A[end] > 0$, end = end -1. If $A[front] + A[end] < 0$ , front = front +1. Otherwise, output YES. This scan repeats until $front >= end$, which requires $O(n)$.
+
+\item After all the pretreatment, we can use solver of 3SUM on A.
+
+\item There's still one case we need to deal with, which is 2b + a = 0 (both b and a are not zero). Another scan is necessary from B's front to end and A's end to front, until we find 2*B[i] + A[j] = 0 or the scan reach the end of either array, which requires $O(n)$.
+\end{itemize}
+
+\end{enumerate}
 \end{problem}
