@@ -1,3 +1,3 @@
 \begin{problem}{3} ~\\
-Suppose there are n literals in total, for each literal, we assign its initial value to be True and check if the resulting 3SAT formula is satisfiable using the given algorithm. If the resulting formula is satisfiable, we can continue to the next literal. If it's not, we change the value of the present literal to be False. This process is repeated until the last literal has been checked. Thus, we can find a satisfying assignment in $O(n^c)$ time.
+Suppose there are n literals in total, for each literal, we assign its value to be True and check if the resulting 3SAT formula is satisfiable using the given algorithm. If the resulting formula is satisfiable, we can continue to the next literal. If it's not, we change the value of the present literal to be False. This process is repeated until the last literal has been assigned. Thus, we can find a satisfying assignment in $O(n^{c+1})$ time.
 \end{problem}

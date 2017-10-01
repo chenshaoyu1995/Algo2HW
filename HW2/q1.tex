@@ -14,7 +14,7 @@ There's a function f that goes $3SUM' \rightarrow 3SUM$. Function f can be imple
 
 \item After all the pretreatment, we can use solver of 3SUM on A.
 
-\item There's still one case we need to deal with, which is 2b + a = 0 (both b and a are not zero). Another scan is necessary from B's front to end and A's end to front, until we find 2*B[i] + A[j] = 0 or the scan reach the end of either array, which requires $O(n)$.
+\item There's still one case we need to deal with, which is 2b + a = 0 (both b and a are not zero). Another scan is necessary from B's front to end and A's end to front, until we find 2*B[i] + A[j] = 0 and return Yes, or the scan reach the end of either array and return No, which requires $O(n)$.
 \end{itemize}
 
 \end{enumerate}
