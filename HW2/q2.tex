@@ -9,5 +9,6 @@ If 3SUM is a YES, the SIMILAR would certainly be a YES. The only circumstance in
 \\
 If SIMILAR is a YES, now we might worry that c = -a or c = -b, because 3SUM would be a NO in this case. However, we have avoided this situation by assigning Z = \{z $|$ $z \in X$, 2z + b != 0\}.\\
 \\
-In sum, 3SUM can be reduced to 3SUM' in $O(nlog{}n)$, which is spent on the sort of input array to find elements that conform to 2z+b=0.
+In sum, 3SUM can be reduced to 3SUM' in $O(nlog{}n)$, which is spent on the sort of input array. Besides, a scan of the array that takes $O
+(n)$ to find elements that conform to 2z+b=0 is needed.
 \end{problem}
