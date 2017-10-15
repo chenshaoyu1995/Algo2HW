@@ -1,0 +1,15 @@
+\begin{problem}{4} ~\\
+Solve 1:\\
+\tab T(U) = $T({U}^{\frac{1}{2}})$ + $\Theta(\log{U})$\\
+\tab T(U) = $T({U}^{\frac{1}{4}})$ + $\Theta(\frac{1}{2}\log{U})$ + $\Theta(\log{U})$\\
+\tab We assume that after k iterations the equation achieves its base case.\\
+\tab T(U) = $T({U}^{\frac{1}{2^k}})$ + $\Theta(\frac{1}{2^{k-1}}\log{U})$ + $\Theta(\frac{1}{2^{k-2}}\log{U})$ + ... + $\Theta(\log{U})$\\
+\tab T(U) = $\Theta(2 \log{U})$\\
+\\
+Solve 2:\\
+\tab Let U = ${2}^{n}$, then the equation can be rewritten as $T(2^n)$ = $T({2}^{\frac{n}{2}})$ + $\Theta(n)$\\ 
+\tab Let $T(2^n)$ = S(n), then the equation can be rewritten again as:\\
+\tab S(n) = $S(\frac{n}{2})$ + $\Theta(n)$\\
+\tab Using Master Theorem, we can know that S(n) = $\Theta(n)$.\\
+\tab That is, T(U) = $\Theta(\log {U})$.\\
+\end{problem}

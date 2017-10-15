@@ -1,0 +1,12 @@
+\begin{problem}{3} ~\\
+IncreaseKey(x, k)\\
+while $k > FindSmallestChild(x)$ \\
+\tab y = FindSmallestChild(x) \\
+\tab Swap(x, y)\\
+\\
+FindSmallestChild(x) returns the child of x with the smallest key, which consumes $O(\log{k})$ and k is the degree of the tree whose root is x.\\
+Swap(x,y) consumes $O(1)$ time.
+The loop at worst would iterate $\log{n}$ times (the largest possible height of the heap)\\
+Each loop would cost at worst $\log{n}$ time\\
+Therefore, in the worst case, IncreaseKey costs $O((\log{n}) ^ 2)$
+\end{problem}
