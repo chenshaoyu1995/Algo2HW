@@ -1,0 +1,3 @@
+\begin{problem}{3} ~\\
+It is impossible that both EXTRACTMIN and INSERT operations take $O(1)$ amortized time. We can make an assumption that this is possible. Then we can do n INSERTs and n EXTRACTMINs in $O(n)$ time, which is in fact a comparison-based sorting of the n elements inserted. We all know that comparison-based sorting cannot be faster than $O(nlogn)$ time, so the assumption is not valid.
+\end{problem}

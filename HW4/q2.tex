@@ -1,0 +1,7 @@
+\begin{problem}{2} ~\\
+The implementation of INSERT has to do a slight change:\\
+\\
+Starting with an empty heap, after n INSERTs were done, there should be n singleton nodes(lazy Binomial). Then the n singleton nodes are linked together so that they conform to the definition of Binomial heap. The LINK operation at worst takes $O(n)$ time when eventually there is only one tree in the heap.\\
+\\
+The insertion of n singleton nodes takes $O(n)$ time, and the link of the nodes takes $O(n)$ time. Therefore, the total cost of n INSERTs is $O(n)$
+\end{problem}

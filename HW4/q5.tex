@@ -1,0 +1,26 @@
+\begin{problem}{5} ~\\
+(a) f(k) = $log(a_k k)$, where $a_k$ is a constant that makes f(k) the largest integer i such that $2^i$ divides k.\\
+\\
+$$\sum_{k=1}^{n} f(k) = log(C*1*2*...*n) = O(nlogn)$$\\
+C is the product of all $a_k$. Therefore, the amortized cost of a single operation is $O(logn)$.\\
+\\
+(b) f(k) = $a_k k$, where $a_k$ is a constant that makes f(k) the largest power of 2 that divides k.\\
+\\
+$$\sum_{k=1}^{n} f(k) = O(n^2)$$\\
+Therefore, the amortized cost of a single operation is $O(n)$.\\
+\\
+(c) Among n operations, the number of times that f(k) =  n is $logn$\\
+\\
+$$\sum_{k=1}^{n} f(k) = nlogn + n - logn = O(nlogn)$$\\
+Therefore, the amortized cost of a single operation is $O(logn)$.\\
+\\
+(d) Among n operations, the number of times that f(k) =  $n^2$ is $logn$\\
+\\
+$$\sum_{k=1}^{n} f(k) = n^2 logn + n - logn = O(n^2 logn)$$\\
+Therefore, the amortized cost of a single operation is $O(nlogn)$.\\
+\\
+(e) Among n operations, the number of times that f(k) =  $k$ is $\sqrt[]{n}$\\
+\\
+$$\sum_{k=1}^{n} f(k) = 1^2 + 2^2 ... + \sqrt[]{n}^2 + n - \sqrt[]{n} = O(n^{\frac{3}{2}})$$\\
+Therefore, the amortized cost of a single operation is $O(n^\frac{1}{2})$.\\
+\end{problem}
