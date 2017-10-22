@@ -1,14 +1,22 @@
 \begin{problem}{5} ~\\
-(a) f(k) = $log(a_k k)$, where $a_k$ is a constant that makes f(k) the largest integer i such that $2^i$ divides k.\\
-\\
-$$\sum_{k=1}^{n} f(k) = log(C*1*2*...*n) = O(nlogn)$$\\
-C is the product of all $a_k$. Therefore, the amortized cost of a single operation is $O(logn)$.\\
-\\
-(b) f(k) = $a_k k$, where $a_k$ is a constant that makes f(k) the largest power of 2 that divides k.\\
-\\
-$$\sum_{k=1}^{n} f(k) = O(n^2)$$\\
-Therefore, the amortized cost of a single operation is $O(n)$.\\
-\\
+%(a) f(k) = $log(a_k k)$, where $a_k$ is a constant that makes f(k) the largest integer i such that $2^i$ divides k.\\
+%\\
+%$$\sum_{k=1}^{n} f(k) = log(C*1*2*...*n) = O(nlogn)$$\\
+%C is the product of all $a_k$. Therefore, the amortized cost of a single operation is $O(logn)$.\\
+%\\
+%(b) f(k) = $a_k k$, where $a_k$ is a constant that makes f(k) the largest power of 2 that divides k.\\
+%\\
+%$$\sum_{k=1}^{n} f(k) = O(n^2)$$\\
+%Therefore, the amortized cost of a single operation is $O(n)$.\\
+%\\
+(a) Let $n=2^{x}$. In 1,2,...,n, half can be divided by $2^{1}$ and the cost here is $\frac{n}{2}\cdot1$. In the numbers that can be divide by $2^{1}$, half can be divided by $2^{2}$ and the cost here is $\frac{n}{2^{2}}\cdot(2-1)$. In the numbers that can be divide by $2^{j-1}$, half can be divided by $2^{j}$ and the cost here is $\frac{n}{2^{j}}\cdot(j-(j-1))$.\\
+Hence, the total cost of n operations is 
+$$\sum_{j=1}^{x} \frac{n}{2^{j}}\cdot(j-(j-1)) = n\cdot\sum_{j=1}^{x}\frac{1}{2^{j}} = n-\frac{n}{2^{x}}$$\\
+Therefore, the amortized cost of a single operation is O(1)\\
+(b) Similar to (a), let $n=2^{x}$. In 1,2,...,n, all can be divided by $2^{0}=1$ and the cost here is $n\cdot1$. Half of the numbers can be divided by $2^{1}=2$ and the cost here is $\frac{n}{2^{1}}\cdot(2^{1}-2^{0})$. In the numbers that can be divided by $2^{j-1}$, half can be divided by $2^{j}$ and the cost here is $\frac{n}{2^{j}}\cdot(2^{j}-2^{j-1})$\\
+Hence, the total cost of n operations is
+$$\sum_{j=1}^{x} \frac{n}{2^{j}}\cdot(2^{j}-2^{j-1}) = n\cdot\sum_{j=1}^{x}\frac{1}{2^{j}}\cdot2^{j-1} = n\cdot\sum_{j=1}^{x}\frac{1}{2} = \frac{n\cdot x}{2}$$\\
+Since $x=log(n)$, the amortized cost of a single operation is $O(log(n))$\\
 (c) Among n operations, the number of times that f(k) =  n is $logn$\\
 \\
 $$\sum_{k=1}^{n} f(k) = nlogn + n - logn = O(nlogn)$$\\
