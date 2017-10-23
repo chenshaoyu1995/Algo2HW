@@ -3,5 +3,7 @@ The implementation of INSERT has to do a slight change:\\
 \\
 Starting with an empty heap, after n INSERTs were done, there should be n singleton nodes(lazy Binomial). Then the n singleton nodes are linked together so that they conform to the definition of Binomial heap. The LINK operation at worst takes $O(n)$ time when eventually there is only one tree in the heap.\\
 \\
-The insertion of n singleton nodes takes $O(n)$ time, and the link of the nodes takes $O(n)$ time. Therefore, the total cost of n INSERTs is $O(n)$
+The insertion of n singleton nodes takes $O(n)$ time, and the link of the nodes takes $O(n)$ time. Therefore, the total cost of n INSERTs is $O(n)$\\
+\\
+This operation is in fact isomorphic to the example of binary counter without cost we learned in class. A Binomial heap can be represented by a binary number, each bit of which representing the Binomial tree $B_k$ of the heap. An INSERT to the heap can be considered as an increment of the counter by 1. Since the amortized cost of incrementing a binary counter starting at 0 is $O(1)$, the amortized cost of an INSERT into an initially empty Binomial heap is $O(1)$. 
 \end{problem}
