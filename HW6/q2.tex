@@ -1,0 +1,6 @@
+\begin{problem}{2} ~\\
+(a) In the worst case, this algorithm might never end, because it is possible that the correct permutation(sorted array) is never picked under the condition that each permutation is generated independently and with replacement. In the best case, the algorithm can reach the end using one iteration, when the first picked permutation happened to be a sorted array.\\
+\\
+(b) Suppose that the algorithm succeeds in the k iteration, we know that in the previous k-1 iterations the algorithm does not pick the right permutation. The probability of picking the wrong permutation is $\frac{n!-1}{n!}$. The probability of picking the correct permutation is $\frac{1}{n!}$. Therefore, the probability of the successful k iteration is $$\prod_{i=1}^{k-1} \frac{n!-1}{n!} * \frac{1}{n!} = \frac{(n!-1)^{k-1}}{(n!)^k}$$\\
+The expected number of iteration is $n!$, according to the fact we learned from class.
+\end{problem}

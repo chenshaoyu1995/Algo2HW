@@ -1,0 +1,9 @@
+\begin{problem}{4} ~\\
+First, we assign each edge in G a capacity of 1. Then, we can use Ford-Fulkerson to find the maximum flow (also the minimum cut) of G. Suppose the maximum flow of G is k, then k is the resilience of (G,s,t) we want to compute.\\
+\\
+Proof: Suppose the flow of information can be interrupted by disrupting l lines (l $<$ k). These l lines must form a cut of graph G, otherwise there is a smaller number of lines that can achieve the effect of interruption. This assumption violates the definition of minimum cut of flow networks, so it's impossible.\\
+\\
+Suppose the flow of information should be interrupted by disrupting L lines (L $>$ k). Then it is impossible that k is the minimum cut of graph G, otherwise L = k.\\
+\\
+Therefore, the algorithm described above should correctly solve the problem.
+\end{problem}

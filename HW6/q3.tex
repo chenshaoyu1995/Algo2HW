@@ -1,0 +1,30 @@
+\begin{problem}{3} ~\\
+(a) The probability that a given element reached level k is $(\frac{1}{2})^k$. So the probability that a given element did not reach level k is $1-(\frac{1}{2})^k$.\\
+\\
+(b) For a given element, its probability that cannot reach level k is $1-(\frac{1}{2})^k$. Then for all elements (n in total), the probability that none of them can reach level k is $(1-(\frac{1}{2})^k)^n$\\
+\\
+(c) Let $I_k$ be the indicator that indicates whether there are some elements in level k (1 stands for yes and 0 stands for no). Also, let $L_k$ be the number of elements on level k. Since $I_k$ is always not greater than $L_k$, We know that $E(I_k) \leq E(L_k)$. $E(I_k)$ implicates the probability that the data structure has elements on level k. To get a reasonably precisely k, we can compute $E(L_k) < \frac{1}{n^c}$.
+$$\frac{n}{2^k} < \frac{1}{n^c}$$
+$$k > (c+1)\log{n}$$\\
+(d) Let $P_k$ be the probability that no elements can reach level k. Then the probability that the highest level of the skip list is exactly level k is that
+$$P_{k+1} - P_k = [1-(\frac{1}{2})^{k+1}]^n - [1-(\frac{1}{2})^{k}]^n$$\\
+(e) The expected number of levels (upper bound) in the skip list is given by
+\begin{align*}
+E[\sum_{k=1}^{\infty} I_k] &= \sum_{k=1}^{\infty} E[I_k]\\
+ &= \sum_{k=1}^{\left\lfloor \log{n} \right\rfloor} E[I_k] + \sum_{k=\left\lfloor \log{n} \right\rfloor + 1}^{\infty} E[I_k] \\
+ &\leq \sum_{k=1}^{\left\lfloor \log{n} \right\rfloor} 1 + \sum_{k=\left\lfloor \log{n} \right\rfloor + 1}^{\infty} \frac{n}{2^k}\\
+ &\leq \log{n} + \sum_{k=0}^{\infty} \frac{1}{2^k}\\
+ &= \log{n} + 2
+\end{align*}
+Let M be maximum of the level of nodes. Then $$E[M] = \sum_{k\geq 0}^{\infty}P(M>k) = \sum_{k\geq 0}^{\infty}1-P(M\leq k) = \sum_{k\geq 0}^{\infty}1-P(X\leq k)^{n} = \sum_{k\geq 0}^{\infty}1-(1-\frac{1}{2^k})^n$$\\
+By viewing the sum as right-hand and left-hand Riemann sum approximations of the corresponding integral we have
+$$\int_0^{\infty} (1 - (1 - \frac{1}{2^k})^n) dk \leq E(M) \leq 1 + \int_0^{\infty} (1 - (1 - \frac{1}{2^k})^n) dk.$$\\
+Let $x = 1 - \frac{1}{2^k}$, we have 
+\begin{align*}
+\int_0^{\infty} (1 - (1 - \frac{1}{2^k})^n) dk &= -\frac{1}{ln\frac{1}{2}}\int_0^1 \frac{1 - x^n}{1 - x} dx\\
+&=\frac{1}{ln2}\int_0^1 (1+x+x^2+...+x^{n-1}) dx \\
+&=\frac{1}{ln2}(1+\frac{1}{2}+\frac{1}{3}+...+\frac{1}{n})\\
+&=\frac{1}{ln2}H_n
+\end{align*}
+The $H_n$ is the n-th harmonic number. Therefore, $E[h]=E[M]\geq\frac{1}{ln2}H_n$
+\end{problem}

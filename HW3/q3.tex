@@ -6,5 +6,5 @@ while $k > FindSmallestChild(x)$ \\
 \\
 FindSmallestChild(x) returns the child of x with the smallest key, which consumes $O(k)$ and k is the degree of the degree of the node. Swap(x,y) consumes $O(1)$ time. \\
 For a tree with size $n=2^{k}$, at the worst case that the node is the root, it needs to iterate k times (the height of the tree) to go to the bottom of the tree. After each iteration, the degree is decreased by 1 so the i-th times FindSmallestChild(x) take $O(k+1-i)$ operations.\\
-Hence, the total operations needed is $O((1+2+3+...+k)*k/2) = O(k^2) = O(\log{n}^2)$\\
+Hence, the total operations needed is $O(1+2+3+...+k) =  O(\log(n)^2)$\\
 \end{problem}

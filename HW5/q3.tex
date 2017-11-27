@@ -1,0 +1,11 @@
+\begin{problem}{3} ~\\
+(a) Yes, the change slows down the data structure.\\
+\\
+Suppose we have a sequence of operations, in which every Find(x) is performed on a x whose flag is false. In other words, all Find(x) operations in the sequence do not do path compression and each of them costs $O(logn)$. This change on the data structure apparently slows the performance down. \\
+\\
+(b) This change doesn't slow down the data structure.\\
+\\
+We can prove it using accounting method. Given a sequence of operations, we deposit a credit for the new child of the root while doing Union. By doing this, we can assure that for any kind of tree every non-root node has a credit without slowing down Union asymptotically. For Find(x) operation, when the flags along the path are toggled from false to true, we use the stored credits to pay for the operation, so the cost is constant. When a path compression is performed and the flags are toggled from true to false, we deposit a credit for each of such nodes and this does not slow down the path compression asymptotically.\\
+\\
+Therefore, the Find operations can be considered as some operations with path compression plus some constant-time operations. We can use the proof described in class to prove that the amortized cost of Find(x) is still $O(log^*(n))$.
+\end{problem}

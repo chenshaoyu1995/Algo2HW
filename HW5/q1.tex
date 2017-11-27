@@ -1,0 +1,8 @@
+\begin{problem}{1} ~\\
+(a) We do the analysis on height level. On level k, we use aggregate method to get the total insertion cost of the level.\\
+\\
+Suppose on any level above level k, the tree is balanced. This is the initial condition before a sequence of insertions, when there is only a node in the tree. On level k, there should be $2^k$ nodes when the level is full, now we divide the space on this level to two equal parts (left and right, with respect to its position to the root), each of which can contain $2^{k-1}$ nodes. For the first node to be inserted on level k, we just pick a side to put it. For the following insertions on level k, we always pick the right numbers that would be inserted to the side that has less available space (more inserted nodes). When level k is full, all nodes except for the first one were moved to the current positions through rebalance.\\
+\\
+Now we can compute the total insertion cost of this level. $$\sum_{j=k}^{1} 2^{k-j}\theta(j)\theta(2^j) = \theta(k^2*2^k)$$\\
+$2^{k-j}\theta(j)$ is the number of times of rebalance of nodes on level k-j. And $\theta(2^j)$ is the cost of rebalance that has to travel back to the level. The number of operations to achieve the above cost is $\theta(2^k)$, so the amortized cost is $\theta(k^2) = \theta(\log^2{n})$, which is higher than $\theta(\log{n})$.
+\end{problem}
