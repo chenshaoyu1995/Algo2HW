@@ -7,5 +7,5 @@ Changes:
 \end{enumerate}
 The new algorithm can be expressed as:
 $$T(i+1) = T(i) + C$$\\
-C is the cost of checking and rebuild. In the new algorithm, the cost of checking remains unchanged. It's still a constant. The probability that rebuild is needed = Prob($p_{i+1}$ forms the smallest distance $\vee$ $p_{i+1}$ forms the second smallest distance) $\leq$ Prob($p_{i+1}$ forms the smallest distance) + Prob($p_{i+1}$ forms the second smallest distance) = $\frac{2}{i+1} + \frac{2}{i+1}$ = $\frac{4}{i+1}$. The cost of rebuild is no greater than $\frac{4}{i+1} \times O(i+1)$, still O(1). Therefore, the expected running time of the new algorithm is $O(n)$.
+C is the cost of checking and rebuild. In the new algorithm, since there is at most one grid that contains 2 points and the other grids contain at most 1 point, the cost of checking is still a constant. The probability that rebuild is needed = Prob($p_{i+1}$ forms the smallest distance $\vee$ $p_{i+1}$ forms the second smallest distance) $\leq$ Prob($p_{i+1}$ forms the smallest distance) + Prob($p_{i+1}$ forms the second smallest distance) = $\frac{2}{i+1} + \frac{2}{i+1}$ = $\frac{4}{i+1}$. The cost of rebuild is no greater than $\frac{4}{i+1} \times O(i+1)$, still O(1). Therefore, the expected running time of the new algorithm is $O(n)$.
 \end{problem}
