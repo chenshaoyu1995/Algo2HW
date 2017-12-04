@@ -1,0 +1,11 @@
+\begin{problem}{5} ~\\
+Changes:
+\begin{enumerate}
+\item For every step, when we are trying to add a new point $p_{i+1}$ to the existing grid (data structure), instead of just maintaining the smallest distance, we also keep track of the second smallest distance of the current state. For example, let $d_i$ and $d_{i snd}$ be the smallest and second smallest distances of $P_i$. After adding $p_{i+1}$, let the newly-computed smallest distance of $p_{i+1}$ be $d_{i+1}$. Compare $d_i$, $d_{i snd}$ and $d_{i+1}$, we can get the new smallest and second smallest distances of $P_{i+1}$.
+\item Instead of rebuilding data structures according to updates on the smallest distance, we do rebuild when there's an update on the second smallest distance. So $\delta = \frac{D}{2}$, where D is the second smallest distance in $P_i$.
+\item We build the first grid when there are three points in P (It should be two in the original CLOSEST-PAIR algorithm), because we need the second smallest distance to build a new grid.
+\end{enumerate}
+The new algorithm can be expressed as:
+$$T(i+1) = T(i) + C$$\\
+C is the cost of checking and rebuild. In the new algorithm, the cost of checking remains unchanged. It's still a constant. The probability that rebuild is needed = Prob($p_{i+1}$ forms the smallest distance $\vee$ $p_{i+1}$ forms the second smallest distance) $\leq$ Prob($p_{i+1}$ forms the smallest distance) + Prob($p_{i+1}$ forms the second smallest distance) = $\frac{2}{i+1} + \frac{2}{i+1}$ = $\frac{4}{i+1}$. The cost of rebuild is no greater than $\frac{4}{i+1} \times O(i+1)$, still O(1). Therefore, the expected running time of the new algorithm is $O(n)$.
+\end{problem}

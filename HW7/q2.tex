@@ -1,0 +1,7 @@
+\begin{problem}{2} ~\\
+E[number of induced 2-paths] = $C_n^3 C_3^1$ Prob[induced 2-paths] = $C_n^3 C_3^1 p^2 (1-p)$ = $\frac{n(n-1)(n-2)}{2} p^2 (1-p)$\\
+\\
+Let Y(p) = $\frac{n(n-1)(n-2)}{2} p^2 (1-p)$. Then Y'(p) = $C p(2-3p)$, where C = $\frac{n(n-1)(n-2)}{2}$. Between [0, $\frac{2}{3}$], Y(p) is increasing, while between [$\frac{2}{3}$, 1], Y(p) is decreasing. Therefore, Y(p) isn't monotone in p.\\
+\\
+From the above analysis, we know that Y(p) will achieve the greatest value when p = $\frac{2}{3}$. In other words, the maximum number of induced 2-paths is expected to be seen when p = $\frac{2}{3}$.
+\end{problem}
